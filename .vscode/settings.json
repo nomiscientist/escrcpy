@@ -1,82 +1,23 @@
 {
-    // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
-
-  // Auto fix
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+  "search.exclude": {
+    "**/.sst": true
   },
-
-  // Silent the stylistic rules in your IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off", "fixable": true },
-    { "rule": "format/*", "severity": "off", "fixable": true },
-    { "rule": "*-indent", "severity": "off", "fixable": true },
-    { "rule": "*-spacing", "severity": "off", "fixable": true },
-    { "rule": "*-spaces", "severity": "off", "fixable": true },
-    { "rule": "*-order", "severity": "off", "fixable": true },
-    { "rule": "*-dangle", "severity": "off", "fixable": true },
-    { "rule": "*-newline", "severity": "off", "fixable": true },
-    { "rule": "*quotes", "severity": "off", "fixable": true },
-    { "rule": "*semi", "severity": "off", "fixable": true }
-  ],
-
-  // Enable eslint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml",
-    "xml",
-    "gql",
-    "graphql",
-    "astro",
-    "svelte",
-    "css",
-    "less",
-    "scss",
-    "pcss",
-    "postcss"
-  ],
-  
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-
-  "vue.server.includeLanguages": ["vue", "markdown"],
-  "i18n-ally.sourceLanguage": "zh-CN",
-  "i18n-ally.localesPaths": [
-    "src/locales/index.js",
-    "src/locales/languages"
-  ],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.extract.ignored": [
-    "Switch",
-    "input keyevent KEYCODE_APP_SWITCH",
-    "input keyevent KEYCODE_HOME",
-    "input keyevent KEYCODE_BACK",
-    "Back",
-    "Notification",
-    "cmd statusbar expand-notifications",
-    "input keyevent KEYCODE_POWER",
-    "Crop",
-    "pair ${this.formData.host}:${this.formData.port} ${this.formData.pair}",
-    "${item.decoder} & ${item.encoder}",
-    " & ",
-    "${key}=${value}",
-    "npm install",
-    "npm run build"
-  ],
-  "cSpell.words": [
-    "bhsn"
-  ],
+  "task.allowAutomaticTasks": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "debug.openDebug": "neverOpen",
+  "problems.autoReveal": true,
+  "terminal.integrated.hideOnStartup": "always",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.inheritEnv": false,
+  "jestrunner.configPath": "jest.unit.config.cjs",
+  "compile-hero.disable-compile-files-on-did-save-code": true,
+  "tasks": {
+    "label": "lint on open",
+    "type": "shell",
+    "command": "npm run lint",
+    "runOn": "folderOpen"
+  }
 }
